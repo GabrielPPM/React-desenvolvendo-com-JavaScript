@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Banner from './componentes/Banner';
+import Formulario from './componentes/Fomulario';
+import Time from './componentes/Time';
+
 
 function App() {
+  const [colaboradores, setColaboradores] = useState([]) 
+  const aoNovoColaboradorAdicionado = (colaborador) => {
+    setColaboradores([...colaboradores, colaborador])
+    console.log(colaboradores)
+  }
+  const times = [
+    'Back-End',
+    'Front-End',
+    'Data Science',
+    'DevOps',
+    'UX e Design',
+    'Mobile',
+    'Inovação e Gestão',
+  ]
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Banner />
+      <Formulario times={times} texto='Preencha os dados para criar o card do colaborador' aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
+        {times.map((time) => <Time nome={time}></Time>)}
     </div>
   );
 }
