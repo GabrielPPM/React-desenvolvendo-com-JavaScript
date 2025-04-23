@@ -2,6 +2,7 @@ import { useState } from "react";
 import Banner from "./componentes/Banner";
 import Formulario from "./componentes/Fomulario";
 import Time from "./componentes/Time";
+import Rodape from "./componentes/Rodape";
 
 function App() {
 	const [colaboradores, setColaboradores] = useState([]);
@@ -50,6 +51,7 @@ function App() {
 					);
 				} else return "";
 			})}
+		<Rodape />
 		</div>
 	);
 }
