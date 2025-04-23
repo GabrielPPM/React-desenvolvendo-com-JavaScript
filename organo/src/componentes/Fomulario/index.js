@@ -5,20 +5,17 @@ import ListaSuspensa from "../ListaSuspensa"
 import "./Formulario.css"
 
 const Formulario = (props) => {
-    const times = props.times
-
-      const [nome, setNome] = useState('Gabriel Machado');
-      const [cargo, setCargo] = useState('');
-      const [imagem, setImagem] = useState('');
-      const [time, setTime] = useState('');
-
-      const aoSalvar = (evento) =>{
+    const times = props.times.map((time) => time.nome)
+    
+    const [nome, setNome] = useState('Gabriel Machado');
+    const [cargo, setCargo] = useState('CEO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
+    const [imagem, setImagem] = useState('./imagens/foto.png');
+    const [time, setTime] = useState('');
+    const aoSalvar = (evento) =>{
         evento.preventDefault();
         props.aoColaboradorCadastrado({nome: nome, cargo: cargo, imagem: imagem, time: time});
-      }
-
-
-
+    }
+    
     return(
         <section>
             <form className='formulario' onSubmit={aoSalvar}>
@@ -33,6 +30,7 @@ const Formulario = (props) => {
             </form>
         </section>
     )
+      
 }
-
+    
 export default Formulario

@@ -1,0 +1,39 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    text-align: center;
+    width: 18rem;
+    height: 11rem;
+    background: white;
+    border-radius: 1rem;
+    border-top: 7rem solid;
+    padding: 0 1rem 2rem 1rem;
+    box-shadow: 0.25rem 0.25rem 1rem rgb(192, 192, 192);
+}
+
+.card img{
+    position: relative;
+    top: -0.5rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+
+.card div{
+    width: 11rem;
+}
+
+.card .card-nome{
+    margin-bottom: 0.5;
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+.card .card-descricao{
+    height: 3rem;
+    overflow-x: clip;
+    overflow-y: scroll;
+    text-overflow:ellipsis;
+}

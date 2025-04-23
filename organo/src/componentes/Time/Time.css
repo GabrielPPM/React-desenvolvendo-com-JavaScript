@@ -1,3 +1,18 @@
-time-titulo{
-    
+.time{
+    text-align: center;
+    padding: 2rem;
+}
+
+.time h3{
+    font-size: 2rem;
+    border-bottom: 0.25rem solid;
+    display: inline-block;
+    padding-bottom: 0.45rem;
+}
+
+.time .colaboradores{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
