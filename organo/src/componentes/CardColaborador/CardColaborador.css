@@ -4,8 +4,8 @@
     justify-content: end;
     align-items: center;
     text-align: center;
-    width: 18rem;
-    height: 11rem;
+    width: 15rem;
+    height: 12rem;
     background: white;
     border-radius: 1rem;
     border-top: 7rem solid;
@@ -15,7 +15,7 @@
 
 .card img{
     position: relative;
-    top: -0.5rem;
+    top: 0rem;
     width: 7rem;
     height: 7rem;
     border-radius: 50%;
@@ -26,14 +26,20 @@
 }
 
 .card .card-nome{
+    text-align: center;
+
+    height: 2.6rem;
     margin-bottom: 0.5;
     color: dodgerblue;
     font-weight: bold;
+    overflow-x: clip;
+    overflow-y: auto;
+    text-overflow:ellipsis;
 }
 
 .card .card-descricao{
     height: 3rem;
     overflow-x: clip;
-    overflow-y: scroll;
+    overflow-y: auto;
     text-overflow:ellipsis;
 }

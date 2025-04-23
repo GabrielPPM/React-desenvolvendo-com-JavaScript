@@ -1,7 +1,6 @@
 import './CardColaborador.css'
 
 const CardColaborador = (props) => {
-    console.log('COR: ', props.cor)
 
     return(
         <section className="card" style={{borderTopColor: props.cor}}>

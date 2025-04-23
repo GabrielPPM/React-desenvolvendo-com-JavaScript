@@ -7,14 +7,25 @@ import "./Formulario.css"
 const Formulario = (props) => {
     const times = props.times.map((time) => time.nome)
     
-    const [nome, setNome] = useState('Gabriel Machado');
-    const [cargo, setCargo] = useState('CEO AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-    const [imagem, setImagem] = useState('./imagens/foto.png');
+    const [nome, setNome] = useState('');
+    const [cargo, setCargo] = useState('');
+    const [imagem, setImagem] = useState('');
     const [time, setTime] = useState('');
+
+
     const aoSalvar = (evento) =>{
         evento.preventDefault();
         props.aoColaboradorCadastrado({nome: nome, cargo: cargo, imagem: imagem, time: time});
+        limpaFormulario();
     }
+
+    const limpaFormulario = () =>{
+        setNome('');
+        setCargo('');
+        setImagem('');
+        setTime('');
+    }
+
     
     return(
         <section>
