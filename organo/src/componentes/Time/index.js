@@ -1,17 +1,36 @@
 import CardColaborador from "../CardColaborador";
+import hexToRgba from 'hex-to-rgba'
 import "./Time.css";
 
-const Time = (props) => {
+const Time = ({
+	cor,
+	nome,
+	colaboradores,
+	aoDeletar,
+	mudarCor,
+}) => {
+	function aoDeletar(id) {
+		console.log("DELETANDO COLABORADOR!");
+		console.log(colaboradores[id]);
+	}
+
+	console.log('SOCORRO! ', nome)
+
 	return (
-		<section className="time" style={{ backgroundColor: props.corSecundaria }}>
-			<h3 style={{ borderBottomColor: props.corPrimaria }}>{props.nome}</h3>
+		<section className="time" style={{ backgroundColor: hexToRgba(cor, ' 0.7'), backgroundImage: 'url(./imagens/fundo.png)'}}>
+			<input value={cor} onChange={evento => mudarCor(nome, evento.target.value)} type="color" className="input-cor"/>
+			<h3 style={{ borderBottomColor: cor }}>{nome}</h3>
 			<div className="colaboradores">
-				{props.colaboradores.map((colaborador) => {
-					if (colaborador.time === props.nome)
+				{colaboradores.map((colaborador, index) => {
+					if (colaborador.time === nome)
 						return (
 							<CardColaborador
+								key={index}
+								id={index}
 								colaborador={colaborador}
-								cor={props.corPrimaria}></CardColaborador>
+								cor={cor}
+								aoDeletar={aoDeletar}
+							/>
 						);
 					else return "";
 				})}

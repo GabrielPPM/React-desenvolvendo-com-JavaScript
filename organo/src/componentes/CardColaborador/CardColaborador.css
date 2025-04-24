@@ -13,11 +13,18 @@
     box-shadow: 0.25rem 0.25rem 1rem rgb(192, 192, 192);
 }
 
+.card .deletar{
+    position: relative;
+    right: -7.9rem;
+    top: -1.6rem
+}
+
 .card img{
     position: relative;
     top: 0rem;
     width: 7rem;
     height: 7rem;
+    object-fit: cover;
     border-radius: 50%;
 }
 

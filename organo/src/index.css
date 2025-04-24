@@ -12,3 +12,22 @@ code {
     monospace;
 }
 
+.app .titulo{
+  width: 100%;
+  text-align: center;
+}
+
+.app .titulo h2{
+  color: #6278F7;
+  padding-bottom: 1.5rem;
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.app .titulo hr{
+  background-color: #6278F7;
+  width: 15rem;
+  height: 0.25rem;
+  margin-bottom: 2rem;
+}

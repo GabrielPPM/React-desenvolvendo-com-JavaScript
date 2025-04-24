@@ -7,9 +7,9 @@ import "./Formulario.css"
 const Formulario = (props) => {
     const times = props.times.map((time) => time.nome)
     
-    const [nome, setNome] = useState('');
-    const [cargo, setCargo] = useState('');
-    const [imagem, setImagem] = useState('');
+    const [nome, setNome] = useState('Gabriel Machado');
+    const [cargo, setCargo] = useState('G1');
+    const [imagem, setImagem] = useState('./imagens/foto.png');
     const [time, setTime] = useState('');
 
 

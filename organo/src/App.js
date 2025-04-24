@@ -9,19 +9,18 @@ function App() {
 	const aoNovoColaboradorAdicionado = (colaborador) => {
 		setColaboradores([...colaboradores, colaborador]);
 	};
-	const times = [
-		{ nome: "Back-End", corPrimaria: "#57c278", corSecundaria: "#D9F7E9" },
-		{ nome: "Front-End", corPrimaria: "#82CFFA", corSecundaria: "#E8F8FF" },
-		{ nome: "Data Science", corPrimaria: "#a6d157", corSecundaria: "#F0F8E2" },
-		{ nome: "DevOps", corPrimaria: "#E06B69", corSecundaria: "#FDE7E8" },
-		{ nome: "UX e Design", corPrimaria: "#DB6EBF", corSecundaria: "#FAE9F5" },
-		{ nome: "Mobile", corPrimaria: "#FFBAD5", corSecundaria: "#FFF5D9" },
+	const [times, setTimes] = useState([
+		{ nome: "Back-End", cor: "#D9F7E9" },
+		{ nome: "Front-End", cor: "#E8F8FF" },
+		{ nome: "Data Science", cor: "#F0F8E2" },
+		{ nome: "DevOps", cor: "#FDE7E8" },
+		{ nome: "UX e Design", cor: "#FAE9F5" },
+		{ nome: "Mobile", cor: "#FFF5D9" },
 		{
 			nome: "Inovação e Gestão",
-			corPrimaria: "#FF8A29",
-			corSecundaria: "#FFEEDF",
+			cor: "#FFEEDF",
 		},
-	];
+	]);
 
 	let timesComColaboradores = new Set(
 		colaboradores.map((colaborador) => {
@@ -29,8 +28,19 @@ function App() {
 		})
 	);
 
+	function mudarCorDoTime(nome, cor) {
+		setTimes(
+			times.map((time) => {
+				if (time.nome === nome) {
+					time.cor = cor;
+				}
+				return time;
+			})
+		);
+	}
+
 	return (
-		<div>
+		<div className="app">
 			<Banner />
 			<Formulario
 				times={times}
@@ -39,19 +49,23 @@ function App() {
 					aoNovoColaboradorAdicionado(colaborador)
 				}
 			/>
+			<div className="titulo">
+				<h2>Minha Organização:</h2>
+				<hr></hr>
+			</div>
 			{times.map((time) => {
 				if (colaboradores.length > 0 && timesComColaboradores.has(time.nome)) {
 					return (
 						<Time
 							key={time.nome}
 							nome={time.nome}
-							corPrimaria={time.corPrimaria}
-							corSecundaria={time.corSecundaria}
-							colaboradores={colaboradores}></Time>
+							cor={time.cor}
+							colaboradores={colaboradores}
+							mudarCor={mudarCorDoTime}></Time>
 					);
 				} else return "";
 			})}
-		<Rodape />
+			<Rodape />
 		</div>
 	);
 }
