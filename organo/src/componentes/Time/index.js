@@ -14,8 +14,6 @@ const Time = ({
 		console.log(colaboradores[id]);
 	}
 
-	console.log('SOCORRO! ', nome)
-
 	return (
 		<section className="time" style={{ backgroundColor: hexToRgba(cor, ' 0.7'), backgroundImage: 'url(./imagens/fundo.png)'}}>
 			<input value={cor} onChange={evento => mudarCor(nome, evento.target.value)} type="color" className="input-cor"/>

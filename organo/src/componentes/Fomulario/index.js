@@ -3,6 +3,7 @@ import Botao from "../Botao"
 import CampoTexto from "../CampoTexto"
 import ListaSuspensa from "../ListaSuspensa"
 import "./Formulario.css"
+import { v4 as uuidv4} from 'uuid';
 
 const Formulario = (props) => {
     const times = props.times.map((time) => time.nome)
@@ -15,7 +16,7 @@ const Formulario = (props) => {
 
     const aoSalvar = (evento) =>{
         evento.preventDefault();
-        props.aoColaboradorCadastrado({nome: nome, cargo: cargo, imagem: imagem, time: time});
+        props.aoColaboradorCadastrado({id: uuidv4() ,nome: nome, cargo: cargo, imagem: imagem, time: time});
         limpaFormulario();
     }
 
