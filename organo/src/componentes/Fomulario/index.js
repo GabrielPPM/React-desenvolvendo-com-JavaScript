@@ -29,17 +29,27 @@ const Formulario = (props) => {
 
     
     return(
-        <section>
-            <form className='formulario' onSubmit={aoSalvar}>
-                <h1>{props.texto}</h1>
-                <CampoTexto obrigatorio={true} label='Nome' placeholder='Digite seu nome' valor={nome} aoAlterado={valor => setNome(valor)}></CampoTexto>
-                <CampoTexto obrigatorio={true} label='Cargo' placeholder='Digite seu cargo' valor={cargo} aoAlterado={valor => setCargo(valor)}></CampoTexto>
-                <CampoTexto label='Imagem' placeholder='Insira a URL da imagem' valor={imagem} aoAlterado={valor => setImagem(valor)}></CampoTexto>
-                <ListaSuspensa valor={time} aoAlterado={valor => setTime(valor)} obrigatorio={true} itens={times} label='Time'/>
-                <Botao>
-                    Criar Card
-                </Botao>
-            </form>
+        <section className="formulario-container">
+            <div className='formulario'>
+                <form  onSubmit={aoSalvar}>
+                    <h1>{props.texto}</h1>
+                    <CampoTexto obrigatorio={true} label='Nome' placeholder='Digite seu nome' valor={nome} aoAlterado={valor => setNome(valor)}></CampoTexto>
+                    <CampoTexto obrigatorio={true} label='Cargo' placeholder='Digite seu cargo' valor={cargo} aoAlterado={valor => setCargo(valor)}></CampoTexto>
+                    <CampoTexto label='Imagem' placeholder='Insira a URL da imagem' valor={imagem} aoAlterado={valor => setImagem(valor)}></CampoTexto>
+                    <ListaSuspensa valor={time} aoAlterado={valor => setTime(valor)} obrigatorio={true} itens={times} label='Time'/>
+                    <Botao>
+                        Criar Card
+                    </Botao>
+                </form>
+                <form onSubmit={aoSalvar}>
+                    <h1>Preencha os dados para criar um novo time</h1>
+                    <CampoTexto obrigatorio={true} label='Nome do time' placeholder='Digite o nome time' valor={nome} aoAlterado={valor => setNome(valor)}></CampoTexto>
+                    <CampoTexto obrigatorio={true} label='Cor do time' placeholder='Digite a cor do time em HEX' valor={cargo} aoAlterado={valor => setCargo(valor)}></CampoTexto>
+                    <Botao>
+                        Criar Card
+                    </Botao>
+                </form>
+            </div>
         </section>
     )
       

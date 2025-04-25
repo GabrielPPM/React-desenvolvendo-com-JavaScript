@@ -4,7 +4,9 @@ import { IoIosCloseCircle } from "react-icons/io";
 const CardColaborador = ({ cor, colaborador, aoDeletar, id }) => {
 	return (
 		<section className="card" style={{ borderTopColor: cor }}>
-			<div className="deletar" onClick={aoDeletar}>
+			<div className="deletar" onClick={evento => 
+				{console.log('EVENTO', evento.target)
+					aoDeletar(id)}}>
 				<IoIosCloseCircle size={30} className="deletar-icon"/>
 			</div>
 			<img src={colaborador.imagem} alt={colaborador.nome}></img>

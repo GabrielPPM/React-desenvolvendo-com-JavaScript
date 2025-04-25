@@ -1,15 +1,24 @@
+.formulario-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .formulario{
     display: flex;
-    flex-direction: column;
-    justify-self: center;
-    justify-content: center;
-    gap: 3rem;
-    width: 40vw;
-    margin: 5rem 0;
-    border-radius: 1rem;
-    background-color: rgb(238, 229, 221);
-    padding: 3rem 5rem 4rem 5rem;
+    width: 60vw;
+    height: auto;
     box-shadow: 0.62rem 0.62rem 1.88rem rgb(167, 167, 167);
+    border-radius: 1rem;
+    margin: 5rem 0;
+}
+.formulario form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 3rem;
+    background-color: rgb(179, 189, 226);
+    padding: 3rem 5rem 4rem 5rem;
 }
 
 .formulario h1{

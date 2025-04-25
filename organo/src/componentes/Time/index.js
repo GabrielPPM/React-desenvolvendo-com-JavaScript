@@ -4,19 +4,17 @@ import "./Time.css";
 
 const Time = ({
 	cor,
+	id,
 	nome,
 	colaboradores,
 	aoDeletar,
 	mudarCor,
 }) => {
-	function aoDeletar(id) {
-		console.log("DELETANDO COLABORADOR!");
-		console.log(colaboradores[id]);
-	}
+
 
 	return (
-		<section className="time" style={{ backgroundColor: hexToRgba(cor, ' 0.7'), backgroundImage: 'url(./imagens/fundo.png)'}}>
-			<input value={cor} onChange={evento => mudarCor(nome, evento.target.value)} type="color" className="input-cor"/>
+		<section className="time" style={{ backgroundColor: hexToRgba(cor, ' 0.65'), backgroundImage: 'url(./imagens/fundo.png)'}}>
+			<input value={cor} onChange={evento => mudarCor(id, evento.target.value)} type="color" className="input-cor"/>
 			<h3 style={{ borderBottomColor: cor }}>{nome}</h3>
 			<div className="colaboradores">
 				{colaboradores.map((colaborador, index) => {
@@ -24,7 +22,7 @@ const Time = ({
 						return (
 							<CardColaborador
 								key={index}
-								id={index}
+								id={colaborador.id}
 								colaborador={colaborador}
 								cor={cor}
 								aoDeletar={aoDeletar}

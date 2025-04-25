@@ -35,19 +35,24 @@ function App() {
 			return colaborador.time;
 		})
 	);
+
+	function aoDeletar(id) {
+		setColaboradores(colaboradores.filter((colaborador) => colaborador.id !== id)
+	)
+	}
 	
-	function mudarCorDoTime(nome, cor) {
+	function mudarCorDoTime(id, cor) {
 		setTimes(
 			times.map((time) => {
-				if (time.nome === nome) {
+				if (time.id === id) {
 					time.cor = cor;
 				}
 				return time;
 			})
 		);
 	}
+
 	
-	console.log(colaboradores)
 	return (
 		<div className="app">
 			<Banner />
@@ -67,9 +72,11 @@ function App() {
 					return (
 						<Time
 							key={time.nome}
+							id={time.id}
 							nome={time.nome}
 							cor={time.cor}
 							colaboradores={colaboradores}
+							aoDeletar={aoDeletar}
 							mudarCor={mudarCorDoTime}></Time>
 					);
 				} else return "";
