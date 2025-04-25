@@ -11,7 +11,7 @@
 .footer .icon-container{
     display: flex;
     width: 20rem;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .footer .icon{

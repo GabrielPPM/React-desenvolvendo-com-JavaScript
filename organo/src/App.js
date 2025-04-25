@@ -7,9 +7,14 @@ import { v4 as uuidv4} from 'uuid';
 
 function App() {
 	const [colaboradores, setColaboradores] = useState([]);
+
 	const aoNovoColaboradorAdicionado = (colaborador) => {
 		setColaboradores([...colaboradores, colaborador]);
 	};
+
+	const aoNovoTimeAdicionado = (time) => {
+		setTimes([...times, time])
+	}
 	const [times, setTimes] = useState([
 		{ 	id: uuidv4(),
 			nome: "Back-End", cor: "#D9F7E9" },
@@ -58,10 +63,10 @@ function App() {
 			<Banner />
 			<Formulario
 				times={times}
-				texto="Preencha os dados para criar o card do colaborador"
 				aoColaboradorCadastrado={(colaborador) =>
 					aoNovoColaboradorAdicionado(colaborador)
 				}
+				aoTimeCadastrado={(time) => aoNovoTimeAdicionado(time)}
 			/>
 			<div className="titulo">
 				<h2>Minha Organização:</h2>
