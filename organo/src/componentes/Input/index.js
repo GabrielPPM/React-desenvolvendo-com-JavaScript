@@ -1,16 +1,15 @@
 import './Input.css'
 
-const Input = (props) => {
-
+const Input = ({type = 'text', obrigatorio ,valor, label, placeholder, aoAlterado}) => {
 
     const aoDigitado = (evento) => {
-        props.aoAlterado(evento.target.value)
+        aoAlterado(evento.target.value)
     }
 
     return (
-        <div>
-            <label>{props.label}</label>
-            <input value={props.valor} required={props.obrigatorio} placeholder={props.placeholder} onChange={aoDigitado}/>
+        <div className={'input-' + type}>
+            <label>{label}</label>
+            <input type={type} value={valor} required={obrigatorio} placeholder={placeholder} onChange={aoDigitado}/>
         </div>
     )
 }

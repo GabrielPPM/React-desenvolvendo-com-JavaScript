@@ -17,19 +17,38 @@ function App() {
 	}
 	const [times, setTimes] = useState([
 		{ 	id: uuidv4(),
-			nome: "Back-End", cor: "#D9F7E9" },
+			favorito: false,
+			nome: "Back-End",
+			cor: "#D9F7E9" 
+		},
 		{ 	id: uuidv4(),
-			nome: "Front-End", cor: "#E8F8FF" },
+			favorito: false,
+			nome: "Front-End",
+			cor: "#E8F8FF" 
+		},
 		{ 	id: uuidv4(),
-			nome: "Data Science", cor: "#F0F8E2" },
+			favorito: false,
+			nome: "Data Science",
+			cor: "#F0F8E2" 
+		},
 		{ 	id: uuidv4(),
-			nome: "DevOps", cor: "#FDE7E8" },
-			{ 	id: uuidv4(),
-				nome: "UX e Design", cor: "#FAE9F5" },
-				{ 	id: uuidv4(),
-					nome: "Mobile", cor: "#FFF5D9" },
-					{
-						id: uuidv4(),
+			favorito: false,
+			nome: "DevOps",
+			cor: "#FDE7E8" 
+		},
+		{ 	id: uuidv4(),
+			favorito: false,
+			nome: "UX e Design",
+			cor: "#FAE9F5" 
+		},
+		{ 	id: uuidv4(),
+			favorito: false,
+			nome: "Mobile",
+			cor: "#FFF5D9" 
+		},
+		{
+			id: uuidv4(),
+			favorito: false,
 			nome: "Inovação e Gestão",
 			cor: "#FFEEDF",
 		},
@@ -57,6 +76,15 @@ function App() {
 		);
 	}
 
+	function resolverFavorito(id){
+		setColaboradores(colaboradores.map(colaborador => {
+			if(colaborador.id === id){
+				colaborador.favorito  = !colaborador.favorito
+				return colaborador
+			}
+		}))
+	}
+
 	
 	return (
 		<div className="app">
@@ -82,7 +110,8 @@ function App() {
 							cor={time.cor}
 							colaboradores={colaboradores}
 							aoDeletar={aoDeletar}
-							mudarCor={mudarCorDoTime}></Time>
+							mudarCor={mudarCorDoTime}
+							aoFavoritar={resolverFavorito}></Time>
 					);
 				} else return "";
 			})}

@@ -54,7 +54,7 @@ const Formulario = (props) => {
                 <form onSubmit={aoSalvarTime}>
                     <h1>Preencha os dados para criar um novo time</h1>
                     <Input obrigatorio={true} label='Nome do time' placeholder='Digite o nome time' valor={nomeTime} aoAlterado={valor => setNomeTime(valor)}></Input>
-                    <Input obrigatorio={true} label='Cor do time' placeholder='Ex.: #FFF5D9' valor={corTime} aoAlterado={valor => setCorTime(valor)}></Input>
+                    <Input type='color' obrigatorio={true} label='Cor do time' placeholder='Ex.: #FFF5D9' valor={corTime} aoAlterado={valor => setCorTime(valor)}></Input>
                     <Botao>
                         Criar Card
                     </Botao>

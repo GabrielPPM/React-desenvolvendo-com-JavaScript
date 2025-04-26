@@ -1,9 +1,14 @@
-label{
+.input-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text label{
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-input{
+.input-text input{
     width: 100%;
     padding: 1rem;
     background-color: #FFF;
@@ -12,4 +17,24 @@ input{
     box-shadow: 0.62rem 0.62rem 1.88rem rgb(0, 0, 0, 0.15);
     font-size: 1.5rem;
     box-sizing : border-box;
+}
+
+.input-color{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-color label{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.input-color input{
+    width: 8rem;
+    height: 4rem;
+    padding: 1rem;
+    background-color: #FFF;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0.62rem 0.62rem 1.88rem rgb(0, 0, 0, 0.15);
 }

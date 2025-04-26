@@ -9,6 +9,7 @@ const Time = ({
 	colaboradores,
 	aoDeletar,
 	mudarCor,
+	aoFavoritar,
 }) => {
 
 
@@ -26,6 +27,7 @@ const Time = ({
 								colaborador={colaborador}
 								cor={cor}
 								aoDeletar={aoDeletar}
+								aoFavoritar={aoFavoritar}
 							/>
 						);
 					else return "";

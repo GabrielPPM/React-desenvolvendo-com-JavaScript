@@ -5,7 +5,7 @@
     align-items: center;
     text-align: center;
     width: 15rem;
-    height: 12rem;
+    height: 14rem;
     background: white;
     border-radius: 1rem;
     border-top: 7rem solid;
@@ -15,8 +15,8 @@
 
 .card .deletar{
     position: relative;
-    right: -7.9rem;
-    top: -1.6rem
+    right: -8rem;
+    top: -1.5rem;
 }
 
 .card img{
@@ -49,4 +49,8 @@
     overflow-x: clip;
     overflow-y: auto;
     text-overflow:ellipsis;
+}
+
+.card .favoritar{
+    margin-top: 1.3rem;
 }
